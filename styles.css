@@ -1,0 +1,292 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c0c0c;
+  overflow: hidden;
+}
+
+
+
+/* #bird:after{
+    position: absolute;
+    top:32%;
+    left: 18%;
+    content: '';
+    width: 48px;
+    height: 35px;
+    border: 1px solid red;
+} */
+
+.fondo {
+  width: 100%;
+  height: 40%;
+  background-color: rgb(49, 223, 242);
+}
+
+.darkBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 3;
+}
+
+.spanStart {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.spanStart .btnStart {
+  background-color: #0c0c0c;
+  border: none;
+  outline: none;
+  width: 25%;
+  padding: 2% 0;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  margin: 3% 0 0 0;
+  color: white;
+  border: 1.5px solid #00a8f7;
+}
+
+.spanStart .name {
+  background-color: #0c0c0c;
+  border: none;
+  outline: none;
+  border: 1.5px solid #00a8f7;
+  border-radius: 3px;
+  padding: 1.5%;
+  font-size: 14px;
+  color: white;
+  width: 35%;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.btnStart:hover {
+  opacity: 0.9;
+}
+
+.infoPlayer {
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+  width: fit-content;
+  height: fit-content;
+  z-index: 3;
+}
+
+.infoPlayer h3:nth-child(1) {
+  color: white;
+}
+
+.infoPlayer h3:nth-child(2) {
+  color: lime;
+}
+
+.pipe {
+  position: absolute;
+  width: 80px;
+  background-color: rgb(25, 194, 25);
+  top: 0;
+  /* left: 60%;
+  height: 37.3%; */
+}
+
+.pipe:before {
+    position: absolute;
+    bottom:0;
+    left: -5%;
+    content: '';
+    width: 110%;
+    height: 10%;
+    background-color: rgb(28, 154, 28);
+}
+
+.pipeTop {
+  position: absolute;
+  width: 80px;
+  background-color: rgb(25, 194, 25);
+  bottom: 0;
+  /* left: 60%;
+  height: 39%; */
+}
+
+
+.pipeTop:before {
+    position: absolute;
+    top:0;
+    left: -5%;
+    content: '';
+    width: 110%;
+    height: 10%;
+    background-color: rgb(28, 154, 28);
+}
+
+.spawnFinished{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height: fit-content;
+  z-index: 3;
+}
+
+@keyframes finished {
+  0%{
+    transform: scale(1);
+  }50%{
+    transform: scale(1.2);
+  }100%{
+    transform: scale(1);
+  }
+}
+
+.spawnFinished *{
+  font-size: 30px;
+}
+
+.spawnFinished h2{
+  color: white;
+}
+
+.spawnFinished h3{
+  color: lime;
+}
+
+.options{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.btnRestart{
+  background-color: #0c0c0c;
+  border: none;
+  outline: none;
+  width: 25%;
+  padding: 2% 0;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  margin: 3% 0 0 0;
+  color: white;
+  border: 1.5px solid #00a8f7;
+  transition: transform .5s ease-in-out;
+  animation: finishedBtn 1.2s ease-in-out infinite;
+}
+
+
+@keyframes finishedBtn {
+  0%{
+    transform: scale(1);
+  }50%{
+    transform: scale(1.1);
+  }100%{
+    transform: scale(1);
+  }
+}
+
+.navGame{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  background-color: #333;
+}
+
+.navGame h2{
+  cursor: pointer;
+}
+
+.navGame div{
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  background-color: #222;
+  padding: .5%;
+  cursor: pointer;
+}
+
+
+.containerSkin{
+  position: absolute;
+  right: 2%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  text-align: center;
+  height: fit-content;
+}
+
+.containerSkin h3{
+  color: white;
+  font-weight: bolder;
+}
+
+.listSkin{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  margin: 5% 0 0 0;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.listSkin li{
+  width: 60%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255, 255, 255, .5);
+  padding: 3%;
+  background-color: #555;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
+}
+
+.listSkin li:hover{
+  transform: scale(1.05);
+  opacity: .8;
+}
+
+.containerSkin ul li img{
+  width: 100%;
+  height: 100%;
+}
+
