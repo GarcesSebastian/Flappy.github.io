@@ -92,6 +92,7 @@ function checkCollisionTop() {
 
 function checkCollisionBottom(){
   let pipesTop = document.querySelectorAll(".pipeTop");
+  let pipes = document.querySelectorAll(".pipe");
   let bird = document.querySelector(".bird");
 
 
@@ -99,18 +100,26 @@ function checkCollisionBottom(){
   for(let i=0 ;i<pipesTop.length;i++){
     // bird.style.top = gameContainer.offsetHeight - pipesTop.item(i).offsetHeight-bird.offsetHeight+"px";
 
-    if(bird.offsetTop > (gameContainer.offsetHeight - pipesTop.item(i).offsetHeight-bird.offsetHeight)+5 
+    if(bird.offsetTop > (gameContainer.offsetHeight - pipesTop.item(i).offsetHeight-bird.offsetHeight)+10 
       && (pipesTop.item(i).offsetLeft - bird.offsetLeft <= 42 && pipesTop.item(i).offsetLeft - bird.offsetLeft > -70)){
       // console.log("Perdiste!");
       bird.style.top = "485px";
       gameOver();
     }
+
+    if(bird.offsetTop <= pipes.item(i).offsetHeight - 20 
+    &&(pipes.item(i).offsetLeft - bird.offsetLeft <= 42 && pipes.item(i).offsetLeft - bird.offsetLeft > 0) ){
+      // console.log("Perdiste!");
+      bird.style.top = "485px";
+      gameOver();
+    }
     
-    // console.log(pipesTop.item(i).offsetLeft);
-    // console.log(bird.offsetLeft);
-    // console.log(pipesTop.item(i).offsetLeft - bird.offsetLeft);
+    // console.log(pipesTop.item(i).offsetHeight);
+    // console.log(bird.offsetTop);
   }
 }
+
+// checkCollisionBottom();
 
 function spawnGameOver(){
   document.querySelector(".darkBackground").style.display = "flex";
