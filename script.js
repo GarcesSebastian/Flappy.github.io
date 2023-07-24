@@ -84,7 +84,7 @@ function checkCollisionTop() {
       )
     ) {
       // console.log("Perdiste!");
-      bird.style.top = "485px";
+      bird.style.top = "97%";
       gameOver();
     }
   });
@@ -103,14 +103,14 @@ function checkCollisionBottom(){
     if(bird.offsetTop > (gameContainer.offsetHeight - pipesTop.item(i).offsetHeight-bird.offsetHeight)+10 
       && (pipesTop.item(i).offsetLeft - bird.offsetLeft <= 42 && pipesTop.item(i).offsetLeft - bird.offsetLeft > -70)){
       // console.log("Perdiste!");
-      bird.style.top = "485px";
+      bird.style.top = "97%";
       gameOver();
     }
 
     if(bird.offsetTop <= pipes.item(i).offsetHeight - 20 
     &&(pipes.item(i).offsetLeft - bird.offsetLeft <= 42 && pipes.item(i).offsetLeft - bird.offsetLeft > 0) ){
       // console.log("Perdiste!");
-      bird.style.top = "485px";
+      bird.style.top = "97%";
       gameOver();
     }
     
@@ -154,7 +154,7 @@ function gameOver() {
     clearInterval(pipeMoveIntervalTop);
     clearInterval(scoreInterval);
     clearTimeout(scoreTimeOut);
-    bird.style.top = "485px";
+    bird.style.top = "97%";
     flagGame = false;
     spawnGameOver();
   }
@@ -216,7 +216,7 @@ function generatePipes() {
       clearInterval(playGame);
       clearInterval(pipeMoveInterval);
       clearInterval(pipeMoveIntervalTop);
-      bird.style.top = "485px";
+      bird.style.top = "97%";
       flagGame = false;
     }
     checkCollisionTop();
@@ -247,7 +247,7 @@ function generatePipes() {
       clearInterval(playGame);
       clearInterval(pipeMoveInterval);
       clearInterval(pipeMoveIntervalTop);
-      bird.style.top = "485px";
+      bird.style.top = "97%";
       flagGame = false;
     }
     pipeTop.style.left = pipeLeft - gameSpeed + 'px';
